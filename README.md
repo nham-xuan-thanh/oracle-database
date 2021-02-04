@@ -96,20 +96,20 @@ docker exec -ti $(docker ps -a | grep "thanhnham/oracle-database:19.3.0-ee" | aw
 cp -r db-sample/ $ORACLE_HOME/demo/schema/
 ```
 
-#### connect to sql plus
+#### Connect to sql plus
 
 ```shell script
 sqlplus sys/<your password>@//localhost:1521/<your SID> as sysdba
 Alter session set container=<your PDB name>;
 ```
 
-#### unlock all sample database & schema
+#### Unlock all sample database & schema
 
 ```shell script
 @?/demo/schema/db-sample/mksample <your password> <your password> <your password> <your password> <your password> <your password> <your password> <your password> users temp $ORACLE_HOME/demo/schema/log/ localhost:1521/<your PDB name>
 ```
 
-### connect to SID
+### Connect to SID
 
     - username: system
     - password: <your password>
@@ -117,11 +117,11 @@ Alter session set container=<your PDB name>;
     - port: <host port>
     - SID: <your SID>
 
-### connect to HR/OE/PM/IX/SH schema
+### Connect to HR/OE/PM/IX/SH schema
 
-    - username: HR
+    - username: HR/OE/PM/IX/SH
     - password: <your password>
     - hostname: localhost
     - port: <host port>
-    - SID: <your PDB name>
+    - Service name: <your PDB name>
 
